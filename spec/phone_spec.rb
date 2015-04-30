@@ -1,11 +1,13 @@
 require('rspec')
 require('contact')
 require('phone')
+require('email')
+require('address')
 
 describe(Phone) do
 
   before() do
-    Contact.clear()
+    Phone.clear()
   end
 
   describe('#number') do
@@ -24,7 +26,7 @@ describe(Phone) do
 
   describe('#store') do
     it('stores contact information') do
-      test_phone = Contact.new({:number => "5612544464", :type => "cell"})
+      test_phone = Phone.new({:number => "5612544464", :type => "cell"})
       test_phone.store()
       expect(Phone.all()).to(eq([test_phone]))
     end
@@ -36,7 +38,7 @@ describe(Phone) do
       test_phone1.store()
       test_phone2 = Phone.new({:number => "5612544464", :type => "cell"})
       test_phone2.store()
-      expect(Phone.find(2)).to(eq(test_contact2))
+      expect(Phone.find(2)).to(eq(test_phone2))
     end
   end
 end
