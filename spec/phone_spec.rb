@@ -36,7 +36,7 @@ describe(Phone) do
     it("finds a contact based on it's id") do
       test_phone1 = Phone.new({:number => "5612544464", :type => "cell"})
       test_phone1.store()
-      test_phone2 = Phone.new({:number => "5612544464", :type => "cell"})
+      test_phone2 = Phone.new({:number => "5612544000", :type => "cell"})
       test_phone2.store()
       expect(Phone.find(2)).to(eq(test_phone2))
     end

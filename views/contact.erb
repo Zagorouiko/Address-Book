@@ -1,0 +1,21 @@
+<h1>Here is the contact you're looking for:</h1>
+
+<ul>
+  <li>First Name: <%= @contact.first_name() %></li>
+  <li>Last Name: <%= @contact.last_name() %></li>
+  <li>Birthday: <%= @contact.birthday() %></li>
+</ul>
+
+<form action="/clear_contact/<%=@contact.id() %>" method="post">
+  <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
+</form>
+
+<form action="/add_phone/<%=@contact.id() %>" method="post">
+  <button id="add_phone" type="submit" class='btn-primary btn'>Add Phone</button>
+</form>
+<form action="/clear_contact/<%=@contact.id() %>" method="post">
+  <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
+</form>
+<form action="/clear_contact/<%=@contact.id() %>" method="post">
+  <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
+</form>

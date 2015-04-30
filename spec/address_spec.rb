@@ -1,5 +1,5 @@
 require('rspec')
-require('contact')
+require('address')
 require('phone')
 require('email')
 require('address')
@@ -51,7 +51,7 @@ describe(Address) do
   end
 
   describe('#store') do
-    it('stores contact information') do
+    it('stores address information') do
       test_address = Address.new({:address => "555 water st.", :city => "Portland", :state => "Oregon", :zip => "97227", :type => "Home"})
       test_address.store()
       expect(Address.all()).to(eq([test_address]))
@@ -59,12 +59,13 @@ describe(Address) do
   end
 
   describe('.find') do
-    it("finds a contact based on it's id") do
+    it("finds a address based on it's id") do
       test_address1 = Address.new({:address => "555 water st.", :city => "Portland", :state => "Oregon", :zip => "97227", :type => "Home"})
       test_address1.store()
-      test_address2 = Address.new({:address => "555 water st.", :city => "Portland", :state => "Oregon", :zip => "97227", :type => "Home"})
+      test_address2 = Address.new({:address => "578 water st.", :city => "Portland", :state => "Oregon", :zip => "97227", :type => "Home"})
       test_address2.store()
       expect(Address.find(2)).to(eq(test_address2))
     end
   end
+
 end

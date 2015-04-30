@@ -1,6 +1,6 @@
 <h1>All Contacts</h1>
 <ul>
   <% @contacts.each() do |contact| %>
-  <li><%= contact.first_name() %> <%= contact.last_name() %> <%= contact.birthday() %></li>
+  <li><a href="/contact/<%= contact.id() %>"><%= contact.first_name() %> <%= contact.last_name() %> <%= contact.birthday() %></a></li>
   <% end %>
 </ul>

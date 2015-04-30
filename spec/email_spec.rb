@@ -33,14 +33,15 @@ describe(Email) do
       expect(Email.all()).to(eq([test_email]))
     end
   end
-  
+
   describe('.find') do
     it("finds a contact based on it's id") do
       test_email1 = Email.new({:email_address => "mcfadden.113@gmail.com",:type => "Home"})
       test_email1.store()
-      test_email2 = Email.new({:email_address => "mcfadden.113@gmail.com",:type => "Home"})
+      test_email2 = Email.new({:email_address => "mcfadden.143@gmail.com",:type => "Home"})
       test_email2.store()
       expect(Email.find(2)).to(eq(test_email2))
     end
   end
+
 end
