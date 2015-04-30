@@ -88,6 +88,7 @@ get ('/full_contact/:id') do
   erb(:contact_full)
 end
 
-  # contact_phone
-  # contact_address
-  # contact_email
+get('/all_contacts') do
+  @contacts = Contact.all()
+  erb(:all_contacts)
+end
