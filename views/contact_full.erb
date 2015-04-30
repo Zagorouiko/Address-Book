@@ -1,0 +1,28 @@
+<h1>Here is all the info about the contact you're looking for:</h1>
+
+<ul>
+  <li>First Name: <%= @contact.first_name() %></li>
+  <li>Last Name: <%= @contact.last_name() %></li>
+  <li>Birthday: <%= @contact.birthday() %></li>
+  <br>
+  <li>Phone: <%= @contact.phones()[0].number() %></li>
+  <li>Type: <%= @contact.phones()[0].type() %></li>
+  <br>
+  <li>Email: <%= @contact.emails()[0].email_address() %></li>
+  <li>Type: <%= @contact.emails()[0].type() %></li>
+  <br>
+  <li>Address: <%= @contact.addresses()[0].address() %></li>
+  <li>City: <%= @contact.addresses()[0].city() %></li>
+  <li>State: <%= @contact.addresses()[0].state() %></li>
+  <li>Zip: <%= @contact.addresses()[0].zip() %></li>
+  <li>Type: <%= @contact.addresses()[0].type() %></li>
+</ul>
+
+
+<form action="/clear_contact/<%=@contact.id() %>" method="post">
+  <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
+</form>
+
+<form action="/all_contacts" method="get">
+  <button id="return" type="submit" class='btn-primary btn'>Return to All Contacts</button>
+</form>

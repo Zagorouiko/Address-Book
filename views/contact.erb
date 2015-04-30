@@ -4,18 +4,23 @@
   <li>First Name: <%= @contact.first_name() %></li>
   <li>Last Name: <%= @contact.last_name() %></li>
   <li>Birthday: <%= @contact.birthday() %></li>
+  <br>
 </ul>
 
+
 <form action="/clear_contact/<%=@contact.id() %>" method="post">
   <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
 </form>
 
-<form action="/add_phone/<%=@contact.id() %>" method="post">
+<form action="/add_phone/<%=@contact.id() %>" method="get">
   <button id="add_phone" type="submit" class='btn-primary btn'>Add Phone</button>
 </form>
-<form action="/clear_contact/<%=@contact.id() %>" method="post">
-  <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
+<form action="/add_email/<%=@contact.id() %>" method="get">
+  <button id="add_email" type="submit" class='btn-danger btn'>Add Email</button>
 </form>
-<form action="/clear_contact/<%=@contact.id() %>" method="post">
-  <button id="clear_contacts" type="submit" class='btn-danger btn'>Delete Contact</button>
+<form action="/add_address/<%=@contact.id() %>" method="get">
+  <button id="add_address" type="submit" class='btn-danger btn'>Add Address</button>
+</form>
+<form action="/full_contact/<%=@contact.id() %>" method="get">
+  <button id="full_contact" type="submit" class='btn-danger btn'>Full Contact Info</button>
 </form>

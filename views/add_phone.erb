@@ -1,0 +1,10 @@
+<h1>Add a Phone</h1>
+<form action="/phone_added/<%= @id %>" method="post">
+  <div class='form-group'>
+    <label for="phone_number">Phone:</label>
+    <input id="phone_number" name="phone_number" type="text" class='form-control'>
+    <label for="type">Type:</label>
+    <input id="type" name="type" type="text" class='form-control'>
+  </div>
+  <button id="submit_phone" type="submit" class='btn-primary btn'>Add Phone</button>
+</form>

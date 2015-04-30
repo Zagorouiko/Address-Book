@@ -29,15 +29,64 @@ get('/contact/:id') do
   erb(:contact)
 end
 
-post('/clear_contact/:id') do
+# post('/clear_contact/:id') do
+#   @id = params.fetch('id').to_i()
+#   Contact.all().delete_at(@id - 1)
+#   erb(:index)
+# end
+
+get('/add_phone/:id') do
   @id = params.fetch('id').to_i()
-  Contact.all().delete_at(@id - 1)
-  erb(:index)
+  erb(:add_phone)
 end
 
-post('/add_phone/:id') do
+get('/add_email/:id') do
+  @id = params.fetch('id').to_i()
+  erb(:add_email)
 end
 
+get('/add_address/:id') do
+  @id = params.fetch('id').to_i()
+  erb(:add_address)
+end
+
+post('/phone_added/:id') do
+  @id = params.fetch('id').to_i()
+  new_phone = Phone.new({:number => params.fetch('phone_number'), :type => params.fetch('type')})
+  new_phone.store()
+  @contact = Contact.find(@id)
+  @contact.add_phone(new_phone)
+  # @all_phones = Phone.all()
+  @contacts = Contact.all()
+  erb(:all_contacts)
+end
+
+post('/email_added/:id') do
+  @id = params.fetch('id').to_i()
+  new_email = Email.new({:email_address => params.fetch('email'), :type => params.fetch('type')})
+  new_email.store()
+  @contact = Contact.find(@id)
+  @contact.add_email(new_email)
+  # @all_phones = Phone.all()
+  @contacts = Contact.all()
+  erb(:all_contacts)
+end
+
+post('/address_added/:id') do
+  @id = params.fetch('id').to_i()
+  new_address = Address.new({:address => params.fetch('address'), :city => params.fetch('city'), :state => params.fetch('state'), :zip => params.fetch('zip'), :type => params.fetch('type')})
+  new_address.store()
+  @contact = Contact.find(@id)
+  @contact.add_address(new_address)
+  # @all_phones = Phone.all()
+  @contacts = Contact.all()
+  erb(:all_contacts)
+end
+
+get ('/full_contact/:id') do
+  @contact = Contact.find(params.fetch('id').to_i())
+  erb(:contact_full)
+end
 
   # contact_phone
   # contact_address

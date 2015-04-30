@@ -1,0 +1,10 @@
+<h1>Add an Email</h1>
+<form action="/email_added/<%= @id %>" method="post">
+  <div class='form-group'>
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="text" class='form-control'>
+    <label for="type">Type:</label>
+    <input id="type" name="type" type="text" class='form-control'>
+  </div>
+  <button id="submit_phone" type="submit" class='btn-primary btn'>Add Email</button>
+</form>

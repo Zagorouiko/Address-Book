@@ -9,6 +9,9 @@ class Contact
     @last_name = attributes.fetch(:last_name)
     @birthday = attributes.fetch(:birthday)
     @id = @@contacts.length() + 1
+    @phones = []
+    @emails = []
+    @addresses = []
   end
 
   define_method(:store) do
@@ -31,6 +34,27 @@ class Contact
     @@contacts = []
   end
 
+  define_method(:add_phone) do |phone|
+    @phones.push(phone)
+  end
 
+  define_method(:add_email) do |email|
+    @emails.push(email)
+  end
 
+  define_method(:add_address) do |address|
+    @addresses.push(address)
+  end
+
+  define_method(:phones) do
+    @phones
+  end
+
+  define_method(:emails) do
+    @emails
+  end
+
+  define_method(:addresses) do
+    @addresses
+  end
 end

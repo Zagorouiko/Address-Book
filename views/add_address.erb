@@ -1,0 +1,16 @@
+<h1>Add an Address</h1>
+<form action="/address_added/<%= @id %>" method="post">
+  <div class='form-group'>
+    <label for="address">Address:</label>
+    <input id="address" name="address" type="text" class='form-control'>
+    <label for="city">City:</label>
+    <input id="city" name="city" type="text" class='form-control'>
+    <label for="state">State:</label>
+    <input id="state" name="state" type="text" class='form-control'>
+    <label for="zip">Zip:</label>
+    <input id="zip" name="zip" type="text" class='form-control'>
+    <label for="type">Type:</label>
+    <input id="type" name="type" type="text" class='form-control'>
+  </div>
+  <button id="submit_phone" type="submit" class='btn-primary btn'>Add Address</button>
+</form>
